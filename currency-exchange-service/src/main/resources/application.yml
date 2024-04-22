@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: currency-exchange-service
+  config:
+    import: optional:configserver:http://localhost:8888
+  jpa:
+    show-sql: true
+    defer-datasource-initialization: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+  h2:
+    console:
+      enabled: true
+server:
+  port: 8000
+
+resilience4j:
+  retry:
+    instances:
+      sample-api:
+        max-attempts: 5
+
+  ratelimiter:
+    instances:
+      default:
+        limit-for-period: 2
+        limit-refresh-period:
+          10s
+

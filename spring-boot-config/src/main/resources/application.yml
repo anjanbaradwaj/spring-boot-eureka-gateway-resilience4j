@@ -1,0 +1,19 @@
+spring.application.name: spring-boot-config
+my:
+  greeting: Hello, world!
+  list:
+    values: One, Two, Three
+
+db:
+  connection: connection-string
+  host: 127.0.0.1
+  port: 3306
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+spring:
+  config:
+    import: configserver:http://localhost:8888

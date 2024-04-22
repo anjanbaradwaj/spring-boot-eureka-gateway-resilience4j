@@ -1,0 +1,6 @@
+server:
+   port: 8081
+   
+   
+my:
+   greeting: This is an updated msg from the Microservice specific properties file
